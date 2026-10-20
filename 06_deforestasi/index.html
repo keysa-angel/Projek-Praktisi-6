@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kalkulator NDVI sederhana dengan contoh nilai reflektansi NIR dan merah serta interpretasi perubahan vegetasi. Bukan analisis citra satelit sungguhan atau bukti pasti deforestasi.">
+<title>ForestWatch — Deteksi Perubahan Hutan</title><link rel="stylesheet" href="style.css">
+</head><body>
+
+<header class="topbar"><a class="brand" href="#">♧ ForestWatch</a><span class="tag">STUDI KASUS 06</span></header><main class="container">
+<section class="hero"><div><p class="eyebrow">AI • CITRA SATELIT • NDVI</p><h1>Pantau perubahan<br><span>tutupan vegetasi.</span></h1><p class="muted">Masukkan nilai reflektansi NIR dan merah untuk menghitung NDVI dan memahami indikasi kondisi vegetasi.</p></div><div class="hero-mark">♧</div></section>
+<section class="grid two"><article class="panel"><p class="eyebrow">INPUT DATA</p><h2>Nilai reflektansi</h2><label>NIR — inframerah dekat <output id="nirOut">0.70</output><input id="nir" type="range" min="0" max="1" step=".01" value=".70"></label><label>Red — cahaya merah <output id="redOut">0.20</output><input id="red" type="range" min="0" max="1" step=".01" value=".20"></label><button id="calc" class="btn">Hitung NDVI</button><div class="formula">NDVI = (NIR − Red) / (NIR + Red)</div><p class="note">Gunakan data reflektansi yang valid. Nilai contoh ini bukan hasil pengukuran satelit.</p></article>
+<article class="panel ndvi-panel"><p class="eyebrow">HASIL PERHITUNGAN</p><div class="ndvi-value" id="ndvi">0.56</div><div class="ndvi-meter"><div id="ndviMarker"></div></div><div class="meter-labels"><span>-1</span><span>0</span><span>+1</span></div><h2 id="condition">Vegetasi cukup tinggi</h2><p id="interpretation" class="muted">Nilai ini mengindikasikan vegetasi pada contoh data.</p></article></section>
+<section class="panel"><p class="eyebrow">PERBANDINGAN WAKTU</p><h2>Contoh perubahan indeks</h2><div class="compare"><div><span>Periode awal</span><strong>0.72</strong><small>Vegetasi relatif rapat</small></div><div class="compare-arrow">→</div><div><span>Periode terbaru</span><strong id="latest">0.56</strong><small id="change">Perlu pemeriksaan lebih lanjut</small></div></div><p class="note">Penurunan NDVI tidak otomatis membuktikan deforestasi. Musim, awan, jenis tutupan lahan, dan kualitas citra dapat memengaruhi nilai. Validasi dengan citra multiwaktu dan data pendukung tetap diperlukan.</p></section>
+</main><footer>ForestWatch · Teknologi untuk mendukung pemantauan lingkungan</footer>
+
+<script src="app.js"></script>
+</body></html>
